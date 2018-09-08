@@ -2,7 +2,7 @@ This is a setup guide for Prometheus MySQLD exporter init script.
 
 For a systemd server, use:
 
-[Monitoring MySQL / MariaDB with Prometheus in five minutes](https://computingforgeeks.com/monitoring-mysql-mariadb-with-prometheus-in-five-minutes/){target="_blank"}
+[Monitoring MySQL / MariaDB with Prometheus in five minutes](https://computingforgeeks.com/monitoring-mysql-mariadb-with-prometheus-in-five-minutes/)
 
 ### Add `prometheus` system user and group:
 
@@ -14,7 +14,7 @@ This user will manage the exporter service.
 
 ### Download and install Prometheus MySQL Exporter:
 
-You may need to check [Prometheus MySQL exporter releases](https://github.com/prometheus/mysqld_exporter/releases){:target="_blank"} page for the latest release, then export the latest version  to VER variable as shown below:
+You may need to check [Prometheus MySQL exporter releases](https://github.com/prometheus/mysqld_exporter/releases) page for the latest release, then export the latest version  to VER variable as shown below:
 
 
 ```
@@ -91,5 +91,5 @@ mysqld_exporter	0:off	1:off	2:on	3:on	4:on	5:on	6:off
 
 For configuration of MySQL endpoint to be scraped by Prometheus Server, check the complete guide 
 
-[Monitoring MySQL / MariaDB with Prometheus in five minutes](https://computingforgeeks.com/monitoring-mysql-mariadb-with-prometheus-in-five-minutes/){:target="_blank"}
+[Monitoring MySQL / MariaDB with Prometheus in five minutes](https://computingforgeeks.com/monitoring-mysql-mariadb-with-prometheus-in-five-minutes/)
 
