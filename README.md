@@ -64,6 +64,20 @@ sudo chown root:prometheus /etc/.mysqld_exporter.cnf
 
 ### Download the init script
 
+Install daemonize package which will be used to run the process in the background
+
+For Ubuntu / Debian systems, install it using:
+
+```
+sudo apt-get install daemonize
+```
+
+For CentOS 6.x, use
+
+```
+sudo yum install daemonize
+```
+
 Download the script and place it on `/etc/init.d`
 
 ```
