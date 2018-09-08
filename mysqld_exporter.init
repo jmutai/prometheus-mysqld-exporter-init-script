@@ -9,7 +9,7 @@
 # config: /etc/.mysqld_exporter.cnf
 # pidfile: /var/run/mysqld_exporter.pid
 
-# Source function library.
+# Source function library - For CentOS
 . /etc/rc.d/init.d/functions
 
 RETVAL=0
