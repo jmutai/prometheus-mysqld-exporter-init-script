@@ -1,3 +1,4 @@
+Setup gude is as below:
 
 ### Add `prometheus` system user and group:
 
@@ -8,6 +9,9 @@ sudo useradd -s /sbin/nologin --system -g prometheus prometheus
 This user will manage the exporter service.
 
 ### Download and install Prometheus MySQL Exporter:
+
+You may need to check [Prometheus MySQL exporter releases](https://github.com/prometheus/mysqld_exporter/releases) page for the latest release, then export the latest version  to VER variable as shown below:
+
 
 ```
 export VER=0.11.0
@@ -56,51 +60,32 @@ sudo chown root:prometheus /etc/.mysqld_exporter.cnf
 
 ### Download the init script
 
+Download the script and place it on `/etc/init.d`
 
+```
+git clone https://github.com/jmutai/prometheus-mysqld-exporter-init-script.git
+cd prometheus-mysqld-exporter-init-script
+chmod +x mysqld_exporter.init
+sudo mv mysqld_exporter.init /etc/init.d/mysqld_exporter
+```
+
+To start the service, just run:
+
+```
+sudo /etc/init.d/mysqld_exporter start
+```
+
+Set it to start on boot
+
+```
+$ sudo chkconfig mysqld_exporter on
+$ sudo chkconfig --list | grep mysqld_exporter
+mysqld_exporter	0:off	1:off	2:on	3:on	4:on	5:on	6:off
+```
 
 ### Configure MySQL endpoint to be scraped by Prometheus Server
 
-Login to your Prometheus server and Configure endpoint to scrape. Below is an example for two MySQL database servers.
+For configuration of MySQL endpoint to be scraped by Prometheus Server, check the complete guide 
 
-```
-scrape_configs:
-  - job_name: server1_db
-    static_configs:
-      - targets: ['10.10.1.10:9104']
-        labels:
-          alias: db1
-
-  - job_name: server2_db
-    static_configs:
-      - targets: ['10.10.1.11:9104']
-        labels:
-          alias: db2
-```
-
-Add other targets by using similar format.
-
-## Creating / Importing MySQL Grafana dashboards
-
-Now that we have the targets configured and agents to be monitored, we shuld be good to add Prometheus data source
-to Grafana so that we can do metrics visualization. If you don't have a ready Grafana server, use any of the guide below to install Grafana
-
-
-When installed, login to admin dashboard and add Datasource by navigating to ` Configuration > Data Sources`.
-
-```
-Name: Prometheus
-Type: Prometheus
-URL: http://localhost:9090
-```
-
-If Prometheus server is not on the same host as Grafana, provide IP address of the server.
-
-
-### Create / Import Grafana Dashboard for MySQL Prometheus exporter
-
-If you don't have all the golden time to create your own dashboards, you can use one created by Percona, they are Open source
-
-https://github.com/percona/grafana-dashboards
-
-
+[Monitoring MySQL / MariaDB with Prometheus in five minutes](https://computingforgeeks.com/monitoring-mysql-mariadb-with-prometheus-in-five-minutes/)
 
