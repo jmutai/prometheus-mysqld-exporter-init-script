@@ -2,7 +2,7 @@ This is a setup guide for Prometheus MySQLD exporter init script.
 
 For a systemd server, use:
 
-[Monitoring MySQL / MariaDB with Prometheus in five minutes](https://computingforgeeks.com/monitoring-mysql-mariadb-with-prometheus-in-five-minutes/){:target="_blank"}
+[Monitoring MySQL / MariaDB with Prometheus in five minutes](https://computingforgeeks.com/monitoring-mysql-mariadb-with-prometheus-in-five-minutes/){target="_blank"}
 
 ### Add `prometheus` system user and group:
 
