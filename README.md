@@ -18,7 +18,7 @@ You may need to check [Prometheus MySQL exporter releases](https://github.com/pr
 
 
 ```
-export VER=0.11.0
+export VER=0.14.0
 wget https://github.com/prometheus/mysqld_exporter/releases/download/v${VER}/mysqld_exporter-${VER}.linux-amd64.tar.gz
 tar xvf mysqld_exporter-${VER}.linux-amd64.tar.gz
 sudo mv  mysqld_exporter-${VER}.linux-amd64/mysqld_exporter /usr/local/bin/
