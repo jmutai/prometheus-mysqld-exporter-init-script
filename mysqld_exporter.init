@@ -1,6 +1,7 @@
 #!/bin/bash
 # Author: Josphat Mutai, josphatkmutai@gmail.com
 # https://github.com/jmutai
+# https://github.com/jmutai/prometheus-mysqld-exporter-init-script
 # mysqld_exporter    This shell script takes care of starting and stopping mysqld_exporter 
 #
 # chkconfig: 2345 80 80
